@@ -1,0 +1,121 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  gap: 5px;
+  box-sizing: border-box;
+  color: var(--color-primary);
+  font-family: var(--font-family);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 140px;
+}
+
+.header-right {
+  align-items: center;
+  position: relative;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 800;
+  margin: 0;
+  font-family: var(--font-title);
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 4px 0 0 0;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.5px;
+  font-family: var(--font-family);
+}
+
+.menu-btn {
+  width: 150px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.4s ease-in-out;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(135deg, var(--color-secondary), #1e1e1e);
+  color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.menu-btn:hover {
+  box-shadow: 0 6px 18px rgba(111, 11, 226, 0.4);
+  background: linear-gradient(135deg, var(--color-accent), #8b2eff);
+  transform: translateY(-2px);
+}
+
+.icon {
+  position: absolute;
+  height: 40px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+
+.text {
+  transform: translateX(55px);
+  transition: all 0.4s ease;
+}
+
+.menu-btn:hover .icon {
+  width: 175px;
+}
+
+.menu-btn:hover .text {
+  opacity: 0;
+}
+
+.menu-btn:focus {
+  outline: none;
+}
+
+.menu-btn:active .icon {
+  transform: scale(0.85);
+}
+
+@media (max-width: 500px) {
+  .main-header {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    padding: 12px;
+    gap: 5px;
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    display: none;
+  }
+
+  .menu-btn {
+    width: 120px;
+    height: 45px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,32 @@
+:root {
+    --color-primary: #ffffff;
+    --color-secondary: #0f0f0f;
+    --color-background: #121212;
+    --color-accent: #6f00ff;
+
+    --color-surface: #1e1e1e;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
+    --shadow-hover: 0 6px 25px rgba(0, 0, 0, 0.35);
+
+    --font-family: 'Inter', 'Roboto', sans-serif;
+    --font-title: 'Poppins', sans-serif;
+
+    --spacing-unit: 8px;
+    --border-radius: 12px;
+}
+
+.spacer {
+  background-color: var(--color-primary);
+  height: 1px;
+  width: 95%;
+  margin-top: 50px;
+  border: none;
+}
+
+.fullSpacer {
+  background-color: var(--color-primary);
+  height: 1px;
+  width: 100%;
+  margin-top: 50px;
+  border: none;
+}

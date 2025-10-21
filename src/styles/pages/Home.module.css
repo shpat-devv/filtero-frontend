@@ -1,0 +1,80 @@
+body {
+    background: linear-gradient(135deg, var(--color-background), #000);
+    color: var(--color-primary);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.homePageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--spacing-unit) * 4);
+}
+
+.content {
+    display: flex;
+    width: 85%;
+    margin-top: 60px;
+    gap: 60px;
+}
+
+.contentLeft {
+    width: 65%;
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    transition: all 0.3s ease;
+}
+
+.contentLeft:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+}
+
+.homeContentImage {
+    width: 100%;
+    height: 400px;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
+}
+
+.homeContentImage:hover {
+    filter: brightness(1);
+}
+
+.contentRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+.ctaButton {
+    width: 220px;
+    height: 60px;
+    border-radius: var(--border-radius);
+    border: none;
+    background: linear-gradient(135deg, var(--color-accent), #8b2eff);
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(111, 11, 226, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.ctaButton:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 20px rgba(111, 11, 226, 0.5);
+}
