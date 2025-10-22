@@ -28,7 +28,7 @@ export default function HomePage() {
             <div className={Styles.contentLeft}>
                 <img className={Styles.homeContentImage} src={imageUrl} alt="image" />
             </div>
-            <FileUploader onImageChange={handleImageChange} />
+            <FileUploader onImageChange={handleImageChange} />  {/* Inside file uploader are all the buttons*/}
         </div>
     </div>;
 }

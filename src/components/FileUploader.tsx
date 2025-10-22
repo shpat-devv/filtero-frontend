@@ -3,13 +3,13 @@ import Styles from "../styles/pages/Home.module.css";
 import api from "../api.js";
 
 type UploadStatus = 'idle' | 'uploading' | 'success' | 'error';
-type Filter = 'blur' | 'grayscale' | 'sepia' | 'invert';
+type Filter = 'blur' | 'grayscale' | 'sepia' | 'revert';
 
 interface FileUploaderProps {
     onImageChange: (imageUrl: string) => void;
 }
 
-const filters: Filter[] = ['blur', 'grayscale', 'sepia', 'invert'];
+const filters: Filter[] = ['blur', 'grayscale', 'sepia', 'revert'];
 
 const FileUploader: React.FC<FileUploaderProps> = ({ onImageChange }) => {
     const [status, setStatus] = useState<UploadStatus>('idle');
@@ -38,7 +38,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onImageChange }) => {
             alert("No filter selected.");
             return;
         }
-    
+
         setStatus('uploading');
         const formData = new FormData();
         formData.append('image', file);
@@ -77,6 +77,24 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onImageChange }) => {
         console.log("Draw Mode button clicked");
     }
 
+    function handleDownloadClick() {
+        const currentImage = document.querySelector('img'); 
+    
+        if (!currentImage || !currentImage.src) {
+            alert("No image to download");
+            return;
+        }
+
+        // Create a temporary anchor element
+        const link = document.createElement('a');
+        link.href = currentImage.src;
+        link.download = `filtered-image-${Date.now()}.png`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+
     function handleFilterSelect(filter: Filter) {
         setSelectedFilter(filter);
     }
@@ -106,10 +124,8 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onImageChange }) => {
 
             <button className={Styles.ctaButton} onClick={handleApplyFilterClick}>Apply Filter</button>
             <button className={Styles.ctaButton} onClick={handleDrawModeClick}>Draw Mode</button>
-            <button onClick={handleFileUpload} className={Styles.ctaButton}>
-                Upload
-            </button>
-
+            <button onClick={handleFileUpload} className={Styles.ctaButton}>Upload</button>
+            <button onClick={handleDownloadClick} className={Styles.ctaButton}>Download</button>
             {showFilterPopup && (
                 <div style={{
                     position: 'fixed',
