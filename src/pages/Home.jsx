@@ -20,7 +20,7 @@ export default function HomePage() {
             menuItems={[
                 { title: "Home", link: "/" },
                 { title: "About", link: "/about" },
-                { title: "Contact", link: "/contact" }
+                { title: "Login", link: "/login" }
             ]}
         />
         <div className="spacer"></div>
